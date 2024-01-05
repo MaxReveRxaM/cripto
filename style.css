@@ -1122,15 +1122,16 @@ HEADER
 		width: 100%;
 		top: 0;
 		bottom: 0;
-		right: -110%;
+		right: 0;
 		position: fixed;
+		transform: translateX(110%);
 		padding: 20px;
 		padding-top: 70px;
 		background-color: #fff;
 		box-shadow: -5px 0px 6px 0px rgba(36, 36, 36, 0.10);
 		overflow-y: scroll;
 		overflow-x: hidden;
-		transition: right 0.7s ease-in-out;
+		transition: transform 0.7s ease-in-out;
 		display: flex;
 		justify-content: unset;
 		flex-direction: column;
@@ -1138,7 +1139,7 @@ HEADER
 	}
 
 	.header__menu_show {
-		right: 0;
+	transform: translateX(0%);
 	}
 
 	.header__nav {
@@ -1733,7 +1734,9 @@ CLIENT LIST
 	}
 
 	.mining-briefcase__left-list {
-		height: calc(100vh - 276px);
+		height: unset;
+		overflow-y: unset;
+		overflow-x: unset;
 	}
 
 	.mining-briefcase__left-names {
