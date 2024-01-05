@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Мои фермы</title>
+	<link type="text/css" rel="stylesheet" href="./style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="header__container">
+			<div class="header__burger" onclick="showMenu()">
+				<div class="header__burger-line"></div>
+				<div class="header__burger-line"></div>
+				<div class="header__burger-line"></div>
+			</div>
+			<div class="header__mobile-logo mobile-logo">
+				<a class="mobile-logo__link" href="./index.html"><img class="mobile-logo__link-img"
+						src="./img/icons/color-logo.svg" alt="color-logo"></a>
+			</div>
+			<div class="header__menu">
+				<nav class="header__nav">
+					<div class="header__nav-up">
+						<div class="header__nav-logo nav-logo">
+							<a class="nav-logo__link" href="./index.html"><img class="nav-logo__img"
+									src="./img/icons/color-logo.svg" alt="color-logo"></a>
+						</div>
+						<div class="header__nav-links">
+							<a href="" class="header__nav-link header__nav-link_active">
+								<div class="header__nav-image"><img src="./img/icons/briefcase.svg" alt="briefcase"
+										class="header__nav-img"></div>Портфель
+							</a>
+							<div class="header__nav-down nav-down">
+								<a href="" class="nav-down__link">Главная</a>
+								<a href="./mining-client.html" class="nav-down__link nav-down__link_active">Майнинг</a>
+								<a href="./master-nodes.html" class="nav-down__link">Мастер-ноды</a>
+								<a href="./Investments.html" class="nav-down__link">Инвестиции</a>
+							</div>
+						</div>
+						<div class="header__nav-links">
+							<a href="" class="header__nav-link">
+								<div class="header__nav-image"><img src="./img/icons/house.svg" alt="house"
+										class="header__nav-img"></div>Мои фермы
+							</a>
+						</div>
+						<div class="header__nav-links">
+							<a href="" class="header__nav-link">
+								<div class="header__nav-image"><img src="./img/icons/info.svg" alt="info"
+										class="header__nav-img"></div>Помощь
+							</a>
+						</div>
+					</div>
+				</nav>
+
+				<div class="header__interaction">
+					<div class="header__interaction-left interaction-left">
+						<div class="interaction-left__wrap">
+							<div class="interaction-left__image">
+								<img class="interaction-left__img" src="./img/example/client.jpg" alt="client">
+							</div>
+							<div class="interaction-left__name">
+								<p>Константин</p>
+								<p>Вениаминов</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="header__interaction-right interaction-right">
+						<div class="interaction-right__theme">
+							<div class="interaction-right__theme-image interaction-right__theme-image_active">
+								<img class="interaction-right__theme-img" src="./img/icons/light-theme.svg"
+									alt="light-theme">
+							</div>
+							<div class="interaction-right__theme-image">
+								<img class="interaction-right__theme-img" src="./img/icons/dark-theme.svg"
+									alt="dark-theme">
+							</div>
+						</div>
+						<div class="interaction-right__languages">
+							<div class="interaction-right__languages-item languages-item">
+								<div class="languages-item__flag">
+									<img class="languages-item__img" src="./img/icons/ru.svg" alt="ru">
+								</div>
+								<div class="languages-item__text">RU</div>
+							</div>
+						</div>
+						<div class="interaction-right__exit">
+							<div class="interaction-right__exit-image">
+								<img class="interaction-right__exit-img" src="./img/icons/exit.svg" alt="exit">
+							</div>
+							<div class="interaction-right__exit-text">Выйти</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main class="main-content main-farms">
+
+		<div class="main-farms__tiles">
+			<div class="main-farms__tile">
+				<div class="main-farms__tile-title">Количество ферм
+					в работе</div>
+				<div class="main-farms__tile-content">
+					<div class="main-farms__tile-value">26</div>
+				</div>
+			</div>
+
+			<div class="main-farms__tile">
+				<div class="main-farms__tile-title">Количество карт
+					в работе</div>
+				<div class="main-farms__tile-content">
+					<div class="main-farms__tile-value">52</div>
+				</div>
+			</div>
+
+			<div class="main-farms__tile">
+				<div class="main-farms__tile-title">Количество неисправных карт</div>
+				<div class="main-farms__tile-content">
+					<div class="main-farms__tile-value">12</div>
+				</div>
+			</div>
+
+			<div class="main-farms__tile">
+				<div class="main-farms__tile-title">Общее потребление ферм</div>
+				<div class="main-farms__tile-content">
+					<div class="main-farms__tile-value">5656</div>
+				</div>
+			</div>
+
+			<div class="main-farms__tile">
+				<div class="main-farms__tile-title">Майнят</div>
+				<div class="main-farms__tile-content">
+					<div class="main-farms__tile-value">
+						<div class="main-farms__tile-coins tile-coins">
+							<div class="tile-coins__wrap">
+								<div class="tile-coins__image">
+									<img class="tile-coins__img" src="./img/example/Neoxa.png" alt="">
+								</div>
+								<div class="tile-coins__text">Неокса</div>
+							</div>
+
+							<div class="tile-coins__wrap">
+								<div class="tile-coins__image">
+									<img class="tile-coins__img" src="./img/example/Neyraj.png" alt="">
+								</div>
+								<div class="tile-coins__text">Алефиум</div>
+							</div>
+
+							<div class="tile-coins__wrap">
+								<div class="tile-coins__image">
+									<img class="tile-coins__img" src="./img/example/Ethics.png" alt="">
+								</div>
+								<div class="tile-coins__text">Этика</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="main-farms__tile">
+				<div class="main-farms__tile-title">Баланс хайва</div>
+				<div class="main-farms__tile-content">
+					<div class="main-farms__tile-value">330871</div>
+				</div>
+			</div>
+
+			<div class="main-farms__tile">
+				<div class="main-farms__tile-title">В день</div>
+				<div class="main-farms__tile-content">
+					<div class="main-farms__tile-value">22223</div>
+				</div>
+			</div>
+
+			<div class="main-farms__tile">
+				<div class="main-farms__tile-title">Сколько осталось</div>
+				<div class="main-farms__tile-content">
+					<div class="main-farms__tile-value">6666</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="main-farms__scroll">
+			<div class="main-farms__list">
+				<div class="main-farms__list-farm">Ферма</div>
+				<div class="main-farms__list-title">#986853: eth106 ФС:</div>
+				<div class="main-farms__list-wrap">
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_of">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="main-farms__list">
+				<div class="main-farms__list-farm">Ферма</div>
+				<div class="main-farms__list-title">#986853: eth106 ФС:</div>
+				<div class="main-farms__list-wrap">
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_of">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_of">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="main-farms__list">
+				<div class="main-farms__list-farm">Ферма</div>
+				<div class="main-farms__list-title">#986853: eth106 ФС:</div>
+				<div class="main-farms__list-wrap">
+					<div class="main-farms__list-item main-farms__list-item_of">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_of">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_of">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="main-farms__list">
+				<div class="main-farms__list-farm">Ферма</div>
+				<div class="main-farms__list-title">#986853: eth106 ФС:</div>
+				<div class="main-farms__list-wrap">
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_of">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="main-farms__list">
+				<div class="main-farms__list-farm">Ферма</div>
+				<div class="main-farms__list-title">#986853: eth106 ФС:</div>
+				<div class="main-farms__list-wrap">
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_of">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+						<div class="main-farms__list">
+							<div class="main-farms__list-farm">Ферма</div>
+				<div class="main-farms__list-title">#986853: eth106 ФС:</div>
+				<div class="main-farms__list-wrap">
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_of">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+
+					<div class="main-farms__list-item main-farms__list-item_on">
+						<div class="main-farms__list-status"></div>
+						<div class="main-farms__list-card">GTX 1070</div>
+						<div class="main-farms__list-temperature">
+							<div class="main-farms__list-gray">Температура:</div>
+							<div class="main-farms__list-black">125</div>
+							<div class="main-farms__list-green">°С</div>
+						</div>
+						<div class="main-farms__list-HR">
+							<div class="main-farms__list-gray">HR:</div>
+							<div class="main-farms__list-black">NaN</div>
+							<div class="main-farms__list-green">KH/s</div>
+						</div>
+						<div class="main-farms__list-mining">
+							<div class="main-farms__list-gray">Майнит:</div>
+							<div class="main-farms__list-coin"><img class="main-farms__list-img"
+									src="./img/example/Neoxa.png" alt=""></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="main-farms__background">
+			<img class="main-farms__background-img" src="./img/briefcase/farms.png" alt="farms">
+		</div>
+
+	</main>
+
+	<script type="text/javascript" src="./media.js"></script>
+</body>
+
+</html>
