@@ -93,7 +93,7 @@ elements.forEach(element => {
 
 ---------------------------------*/
 
-function openModal(nameModal, newClass) {
+function openModal(nameModal, newClass, overflow) {
 	// Отображаем выбранное модальное окно
 	let selectedModals = document.querySelectorAll('.' + nameModal);
 
@@ -102,8 +102,10 @@ function openModal(nameModal, newClass) {
 		element.classList.add(newClass);
 	});
 
-	// Добавляем или удаляем overflow-y: hidden
-	document.body.style.overflowY = 'hidden';
+	if (!overflow) {
+		// Добавляем или удаляем overflow-y: hidden
+		document.body.style.overflowY = 'hidden';
+	}
 }
 
 
@@ -183,47 +185,47 @@ document.addEventListener('DOMContentLoaded', function () {
 ---------------------------------*/
 
 document.addEventListener('DOMContentLoaded', function () {
-    const mainCalculatorDrop = document.querySelector('.main-calculator__drop');
+	const mainCalculatorDrop = document.querySelector('.main-calculator__drop');
 
-    mainCalculatorDrop.addEventListener('click', function (event) {
-        const calculatorDrop = event.currentTarget;
-        const inputImage = calculatorDrop.querySelector('.calculator-drop__input-image');
+	mainCalculatorDrop.addEventListener('click', function (event) {
+		const calculatorDrop = event.currentTarget;
+		const inputImage = calculatorDrop.querySelector('.calculator-drop__input-image');
 
-        // Пункт 1: Добавление/удаление класса и отображение/скрытие списка
-        if (!calculatorDrop.classList.toggle('calculator-drop_active')) {
-            // Пункт 3: Удаление картинки из input-image
-            inputImage.innerHTML = '';
-        }
+		// Пункт 1: Добавление/удаление класса и отображение/скрытие списка
+		if (!calculatorDrop.classList.toggle('calculator-drop_active')) {
+			// Пункт 3: Удаление картинки из input-image
+			inputImage.innerHTML = '';
+		}
 
-        // Остановка всплытия события, чтобы не сработал обработчик document.click сразу же
-        event.stopPropagation();
-    });
+		// Остановка всплытия события, чтобы не сработал обработчик document.click сразу же
+		event.stopPropagation();
+	});
 
-    const listItems = document.querySelectorAll('.calculator-drop__list-item');
+	const listItems = document.querySelectorAll('.calculator-drop__list-item');
 
-    listItems.forEach(function (listItem) {
-        listItem.addEventListener('click', function (event) {
-            // Пункт 2: Копирование текста и картинки
-            const listItemText = listItem.querySelector('.calculator-drop__list-text').textContent;
-            const listItemImage = listItem.querySelector('.calculator-drop__list-img').cloneNode(true);
+	listItems.forEach(function (listItem) {
+		listItem.addEventListener('click', function (event) {
+			// Пункт 2: Копирование текста и картинки
+			const listItemText = listItem.querySelector('.calculator-drop__list-text').textContent;
+			const listItemImage = listItem.querySelector('.calculator-drop__list-img').cloneNode(true);
 
-            const input = mainCalculatorDrop.querySelector('.calculator-drop__input');
-            const inputImage = mainCalculatorDrop.querySelector('.calculator-drop__input-image');
+			const input = mainCalculatorDrop.querySelector('.calculator-drop__input');
+			const inputImage = mainCalculatorDrop.querySelector('.calculator-drop__input-image');
 
-            input.value = listItemText;
-            inputImage.innerHTML = '';
-            inputImage.appendChild(listItemImage);
+			input.value = listItemText;
+			inputImage.innerHTML = '';
+			inputImage.appendChild(listItemImage);
 
-            // Удаление класса для скрытия списка
-            mainCalculatorDrop.classList.remove('calculator-drop_active');
+			// Удаление класса для скрытия списка
+			mainCalculatorDrop.classList.remove('calculator-drop_active');
 
-            // Остановка всплытия события, чтобы не сработал обработчик document.click сразу же
-            event.stopPropagation();
-        });
-    });
+			// Остановка всплытия события, чтобы не сработал обработчик document.click сразу же
+			event.stopPropagation();
+		});
+	});
 
-    // При клике в любой другой области документа, убираем активный класс
-    document.addEventListener('click', function () {
-        mainCalculatorDrop.classList.remove('calculator-drop_active');
-    });
+	// При клике в любой другой области документа, убираем активный класс
+	document.addEventListener('click', function () {
+		mainCalculatorDrop.classList.remove('calculator-drop_active');
+	});
 });

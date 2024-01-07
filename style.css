@@ -1155,6 +1155,7 @@ HEADER
 	.header {
 		padding: 14px 20px;
 		box-shadow: unset;
+		z-index: 9999999999;
 	}
 
 	.header:before {
@@ -2698,7 +2699,7 @@ ADMIN USERS
 	top: 0;
 	left: 0;
 	position: fixed;
-	z-index: 9;
+	z-index: 9999999999;
 	background-color: #00000075;
 }
 
