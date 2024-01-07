@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Портфель/Инвестиции</title>
+	<link type="text/css" rel="stylesheet" href="./style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="header__container">
+			<div class="header__burger" onclick="showMenu()">
+				<div class="header__burger-line"></div>
+				<div class="header__burger-line"></div>
+				<div class="header__burger-line"></div>
+			</div>
+			<div class="header__mobile-logo mobile-logo">
+				<a class="mobile-logo__link" href="./index.html"><img class="mobile-logo__link-img"
+						src="./img/icons/color-logo.svg" alt="color-logo"></a>
+			</div>
+			<div class="header__menu">
+				<nav class="header__nav">
+					<div class="header__nav-up">
+						<div class="header__nav-logo nav-logo">
+							<a class="nav-logo__link" href="./index.html"><img class="nav-logo__img"
+									src="./img/icons/color-logo.svg" alt="color-logo"></a>
+						</div>
+						<div class="header__nav-links">
+							<a href="" class="header__nav-link header__nav-link_active">
+								<div class="header__nav-image"><img src="./img/icons/briefcase.svg" alt="briefcase"
+										class="header__nav-img"></div>Портфель
+							</a>
+							<div class="header__nav-down nav-down">
+								<a href="" class="nav-down__link">Главная</a>
+								<a href="./mining-client.html" class="nav-down__link">Майнинг</a>
+								<a href="./master-nodes.html" class="nav-down__link">Мастер-ноды</a>
+								<a href="./Investments.html" class="nav-down__link nav-down__link_active">Инвестиции</a>
+							</div>
+						</div>
+						<div class="header__nav-links">
+							<a href="./farms.html" class="header__nav-link">
+								<div class="header__nav-image"><img src="./img/icons/house.svg" alt="house"
+										class="header__nav-img"></div>Мои фермы
+							</a>
+						</div>
+						<div class="header__nav-links">
+							<a href="" class="header__nav-link">
+								<div class="header__nav-image"><img src="./img/icons/info.svg" alt="info"
+										class="header__nav-img"></div>Помощь
+							</a>
+						</div>
+					</div>
+				</nav>
+
+				<div class="header__interaction">
+					<div class="header__interaction-left interaction-left">
+						<div class="interaction-left__wrap">
+							<div class="interaction-left__image">
+								<img class="interaction-left__img" src="./img/example/client.jpg" alt="client">
+							</div>
+							<div class="interaction-left__name">
+								<p>Константин</p>
+								<p>Вениаминов</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="header__interaction-right interaction-right">
+						<div class="interaction-right__theme">
+							<div class="interaction-right__theme-image interaction-right__theme-image_active">
+								<img class="interaction-right__theme-img" src="./img/icons/light-theme.svg"
+									alt="light-theme">
+							</div>
+							<div class="interaction-right__theme-image">
+								<img class="interaction-right__theme-img" src="./img/icons/dark-theme.svg"
+									alt="dark-theme">
+							</div>
+						</div>
+						<div class="interaction-right__languages">
+							<div class="interaction-right__languages-item languages-item">
+								<div class="languages-item__flag">
+									<img class="languages-item__img" src="./img/icons/ru.svg" alt="ru">
+								</div>
+								<div class="languages-item__text">RU</div>
+							</div>
+						</div>
+						<div class="interaction-right__exit">
+							<div class="interaction-right__exit-image">
+								<img class="interaction-right__exit-img" src="./img/icons/exit.svg" alt="exit">
+							</div>
+							<div class="interaction-right__exit-text">Выйти</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main class="main-content mining-briefcase">
+		<div class="mining-briefcase__left">
+			<div class="mining-briefcase__left-names">
+				<p class="mining-briefcase__left-name mining-briefcase__left-name_id">ID</p>
+				<p class="mining-briefcase__left-name mining-briefcase__left-name_coin">Монета</p>
+				<p class="mining-briefcase__left-name mining-briefcase__left-name_type">Портфель</p>
+				<p class="mining-briefcase__left-name mining-briefcase__left-name_wallet">Кошелек</p>
+				<p class="mining-briefcase__left-name mining-briefcase__left-name_quantity">Количество</p>
+				<p class="mining-briefcase__left-name mining-briefcase__left-name_price">Стоимость</p>
+				<p class="mining-briefcase__left-name mining-briefcase__left-name_balance">Баланс</p>
+				<p class="mining-briefcase__left-name mining-briefcase__left-name_course">Курс <span class="mining-briefcase__left-span">USDT</span></p>
+			</div>
+			<div class="mining-briefcase__left-list">
+				<div class="mining-briefcase__left-coin item-coin">
+					<div class="item-coin__orientation">
+						<div class="item-coin__order"><span class="item-coin__order-green">#</span>1</div>
+						<div class="item-coin__name">
+							<div class="item-coin__name-image">
+								<img class="item-coin__name-img" src="./img/example/Ethics.png" alt="Ethics">
+							</div>
+							<div class="item-coin__name-text">
+								<div class="item-coin__name-first">Этика</div>
+								<div class="item-coin__name-second">ЕГАЗ</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-coin__type item-coin__type_investments">
+						<p class="item-coin__type-value">Мастер-ноды</p>
+					</div>
+
+					<div class="item-coin__wallet">
+						<div class="item-coin__wallet-text">Кошелек</div>
+						<div class="item-coin__wallet-value">Os3IGОjkf3jfdqefgB1</div>
+						<div class="item-coin__wallet-copy"><img class="item-coin__wallet-img"
+								src="./img/icons/copy.svg" alt="copy"></div>
+					</div>
+
+					<div class="item-coin__quantity">
+						<div class="item-coin__quantity-text">Количество</div>
+						<div class="item-coin__quantity-value">176,26</div>
+					</div>
+
+					<div class="item-coin__price">
+						<div class="item-coin__price-text">Стоимость</div>
+						<div class="item-coin__price-value">176,26</div>
+					</div>
+
+					<div class="item-coin__balance">
+						<div class="item-coin__balance-text">Баланс</div>
+						<div class="item-coin__balance-value">176,26v</div>
+					</div>
+
+					<div class="item-coin__course">
+						<div class="item-coin__course-text">Курс USDT</div>
+						<div class="item-coin__course-value">
+							<div class="item-coin__course-image"><img class="item-coin__course-img"
+									src="./img/example/USDT-logo.svg" alt="USDT-logo"></div>
+							<span class="item-coin__course-span">34,1</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="mining-briefcase__left-coin item-coin">
+					<div class="item-coin__orientation">
+						<div class="item-coin__order"><span class="item-coin__order-green">#</span>1</div>
+						<div class="item-coin__name">
+							<div class="item-coin__name-image">
+								<img class="item-coin__name-img" src="./img/example/Ethics.png" alt="Ethics">
+							</div>
+							<div class="item-coin__name-text">
+								<div class="item-coin__name-first">Этика</div>
+								<div class="item-coin__name-second">ЕГАЗ</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-coin__type item-coin__type_investments">
+						<p class="item-coin__type-value">Мастер-ноды</p>
+					</div>
+
+					<div class="item-coin__wallet">
+						<div class="item-coin__wallet-text">Кошелек</div>
+						<div class="item-coin__wallet-value">24523452345345345543</div>
+						<div class="item-coin__wallet-copy"><img class="item-coin__wallet-img"
+								src="./img/icons/copy.svg" alt="copy"></div>
+					</div>
+
+					<div class="item-coin__quantity">
+						<div class="item-coin__quantity-text">Количество</div>
+						<div class="item-coin__quantity-value">176,26</div>
+					</div>
+
+					<div class="item-coin__price">
+						<div class="item-coin__price-text">Стоимость</div>
+						<div class="item-coin__price-value">176,26</div>
+					</div>
+
+					<div class="item-coin__balance">
+						<div class="item-coin__balance-text">Баланс</div>
+						<div class="item-coin__balance-value">176,26v</div>
+					</div>
+
+					<div class="item-coin__course">
+						<div class="item-coin__course-text">Курс USDT</div>
+						<div class="item-coin__course-value">
+							<div class="item-coin__course-image"><img class="item-coin__course-img"
+									src="./img/example/USDT-logo.svg" alt="USDT-logo"></div>
+							<span class="item-coin__course-span">34,1</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="mining-briefcase__left-coin item-coin">
+					<div class="item-coin__orientation">
+						<div class="item-coin__order"><span class="item-coin__order-green">#</span>1</div>
+						<div class="item-coin__name">
+							<div class="item-coin__name-image">
+								<img class="item-coin__name-img" src="./img/example/Ethics.png" alt="Ethics">
+							</div>
+							<div class="item-coin__name-text">
+								<div class="item-coin__name-first">Этика</div>
+								<div class="item-coin__name-second">ЕГАЗ</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-coin__type item-coin__type_investments">
+						<p class="item-coin__type-value">Мастер-ноды</p>
+					</div>
+
+					<div class="item-coin__wallet">
+						<div class="item-coin__wallet-text">Кошелек</div>
+						<div class="item-coin__wallet-value">999999999999999999</div>
+						<div class="item-coin__wallet-copy"><img class="item-coin__wallet-img"
+								src="./img/icons/copy.svg" alt="copy"></div>
+					</div>
+
+					<div class="item-coin__quantity">
+						<div class="item-coin__quantity-text">Количество</div>
+						<div class="item-coin__quantity-value">176,26</div>
+					</div>
+
+					<div class="item-coin__price">
+						<div class="item-coin__price-text">Стоимость</div>
+						<div class="item-coin__price-value">176,26</div>
+					</div>
+
+					<div class="item-coin__balance">
+						<div class="item-coin__balance-text">Баланс</div>
+						<div class="item-coin__balance-value">176,26v</div>
+					</div>
+
+					<div class="item-coin__course">
+						<div class="item-coin__course-text">Курс USDT</div>
+						<div class="item-coin__course-value">
+							<div class="item-coin__course-image"><img class="item-coin__course-img"
+									src="./img/example/USDT-logo.svg" alt="USDT-logo"></div>
+							<span class="item-coin__course-span">34,1</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="mining-briefcase__left-coin item-coin">
+					<div class="item-coin__orientation">
+						<div class="item-coin__order"><span class="item-coin__order-green">#</span>1</div>
+						<div class="item-coin__name">
+							<div class="item-coin__name-image">
+								<img class="item-coin__name-img" src="./img/example/Ethics.png" alt="Ethics">
+							</div>
+							<div class="item-coin__name-text">
+								<div class="item-coin__name-first">Этика</div>
+								<div class="item-coin__name-second">ЕГАЗ</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-coin__type item-coin__type_investments">
+						<p class="item-coin__type-value">Мастер-ноды</p>
+					</div>
+
+					<div class="item-coin__wallet">
+						<div class="item-coin__wallet-text">Кошелек</div>
+						<div class="item-coin__wallet-value">Os3IGОjkf3jfdqefgB1</div>
+						<div class="item-coin__wallet-copy"><img class="item-coin__wallet-img"
+								src="./img/icons/copy.svg" alt="copy"></div>
+					</div>
+
+					<div class="item-coin__quantity">
+						<div class="item-coin__quantity-text">Количество</div>
+						<div class="item-coin__quantity-value">176,26</div>
+					</div>
+
+					<div class="item-coin__price">
+						<div class="item-coin__price-text">Стоимость</div>
+						<div class="item-coin__price-value">176,26</div>
+					</div>
+
+					<div class="item-coin__balance">
+						<div class="item-coin__balance-text">Баланс</div>
+						<div class="item-coin__balance-value">176,26v</div>
+					</div>
+
+					<div class="item-coin__course">
+						<div class="item-coin__course-text">Курс USDT</div>
+						<div class="item-coin__course-value">
+							<div class="item-coin__course-image"><img class="item-coin__course-img"
+									src="./img/example/USDT-logo.svg" alt="USDT-logo"></div>
+							<span class="item-coin__course-span">34,1</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="mining-briefcase__left-coin item-coin">
+					<div class="item-coin__orientation">
+						<div class="item-coin__order"><span class="item-coin__order-green">#</span>1</div>
+						<div class="item-coin__name">
+							<div class="item-coin__name-image">
+								<img class="item-coin__name-img" src="./img/example/Ethics.png" alt="Ethics">
+							</div>
+							<div class="item-coin__name-text">
+								<div class="item-coin__name-first">Этика</div>
+								<div class="item-coin__name-second">ЕГАЗ</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-coin__type item-coin__type_investments">
+						<p class="item-coin__type-value">Мастер-ноды</p>
+					</div>
+
+					<div class="item-coin__wallet">
+						<div class="item-coin__wallet-text">Кошелек</div>
+						<div class="item-coin__wallet-value">Os3IGОjkf3jfdqefgB1</div>
+						<div class="item-coin__wallet-copy"><img class="item-coin__wallet-img"
+								src="./img/icons/copy.svg" alt="copy"></div>
+					</div>
+
+					<div class="item-coin__quantity">
+						<div class="item-coin__quantity-text">Количество</div>
+						<div class="item-coin__quantity-value">176,26</div>
+					</div>
+
+					<div class="item-coin__price">
+						<div class="item-coin__price-text">Стоимость</div>
+						<div class="item-coin__price-value">176,26</div>
+					</div>
+
+					<div class="item-coin__balance">
+						<div class="item-coin__balance-text">Баланс</div>
+						<div class="item-coin__balance-value">176,26v</div>
+					</div>
+
+					<div class="item-coin__course">
+						<div class="item-coin__course-text">Курс USDT</div>
+						<div class="item-coin__course-value">
+							<div class="item-coin__course-image"><img class="item-coin__course-img"
+									src="./img/example/USDT-logo.svg" alt="USDT-logo"></div>
+							<span class="item-coin__course-span">34,1</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="mining-briefcase__left-coin item-coin">
+					<div class="item-coin__orientation">
+						<div class="item-coin__order"><span class="item-coin__order-green">#</span>1</div>
+						<div class="item-coin__name">
+							<div class="item-coin__name-image">
+								<img class="item-coin__name-img" src="./img/example/Ethics.png" alt="Ethics">
+							</div>
+							<div class="item-coin__name-text">
+								<div class="item-coin__name-first">Этика</div>
+								<div class="item-coin__name-second">ЕГАЗ</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-coin__type item-coin__type_investments">
+						<p class="item-coin__type-value">Мастер-ноды</p>
+					</div>
+
+					<div class="item-coin__wallet">
+						<div class="item-coin__wallet-text">Кошелек</div>
+						<div class="item-coin__wallet-value">Os3IGОjkf3jfdqefgB1</div>
+						<div class="item-coin__wallet-copy"><img class="item-coin__wallet-img"
+								src="./img/icons/copy.svg" alt="copy"></div>
+					</div>
+
+					<div class="item-coin__quantity">
+						<div class="item-coin__quantity-text">Количество</div>
+						<div class="item-coin__quantity-value">176,26</div>
+					</div>
+
+					<div class="item-coin__price">
+						<div class="item-coin__price-text">Стоимость</div>
+						<div class="item-coin__price-value">176,26</div>
+					</div>
+
+					<div class="item-coin__balance">
+						<div class="item-coin__balance-text">Баланс</div>
+						<div class="item-coin__balance-value">176,26v</div>
+					</div>
+
+					<div class="item-coin__course">
+						<div class="item-coin__course-text">Курс USDT</div>
+						<div class="item-coin__course-value">
+							<div class="item-coin__course-image"><img class="item-coin__course-img"
+									src="./img/example/USDT-logo.svg" alt="USDT-logo"></div>
+							<span class="item-coin__course-span">34,1</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="mining-briefcase__left-coin item-coin">
+					<div class="item-coin__orientation">
+						<div class="item-coin__order"><span class="item-coin__order-green">#</span>1</div>
+						<div class="item-coin__name">
+							<div class="item-coin__name-image">
+								<img class="item-coin__name-img" src="./img/example/Ethics.png" alt="Ethics">
+							</div>
+							<div class="item-coin__name-text">
+								<div class="item-coin__name-first">Этика</div>
+								<div class="item-coin__name-second">ЕГАЗ</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-coin__type item-coin__type_investments">
+						<p class="item-coin__type-value">Мастер-ноды</p>
+					</div>
+
+					<div class="item-coin__wallet">
+						<div class="item-coin__wallet-text">Кошелек</div>
+						<div class="item-coin__wallet-value">Os3IGОjkf3jfdqefgB1</div>
+						<div class="item-coin__wallet-copy"><img class="item-coin__wallet-img"
+								src="./img/icons/copy.svg" alt="copy"></div>
+					</div>
+
+					<div class="item-coin__quantity">
+						<div class="item-coin__quantity-text">Количество</div>
+						<div class="item-coin__quantity-value">176,26</div>
+					</div>
+
+					<div class="item-coin__price">
+						<div class="item-coin__price-text">Стоимость</div>
+						<div class="item-coin__price-value">176,26</div>
+					</div>
+
+					<div class="item-coin__balance">
+						<div class="item-coin__balance-text">Баланс</div>
+						<div class="item-coin__balance-value">176,26v</div>
+					</div>
+
+					<div class="item-coin__course">
+						<div class="item-coin__course-text">Курс USDT</div>
+						<div class="item-coin__course-value">
+							<div class="item-coin__course-image"><img class="item-coin__course-img"
+									src="./img/example/USDT-logo.svg" alt="USDT-logo"></div>
+							<span class="item-coin__course-span">34,1</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="mining-briefcase__left-coin item-coin">
+					<div class="item-coin__orientation">
+						<div class="item-coin__order"><span class="item-coin__order-green">#</span>1</div>
+						<div class="item-coin__name">
+							<div class="item-coin__name-image">
+								<img class="item-coin__name-img" src="./img/example/Ethics.png" alt="Ethics">
+							</div>
+							<div class="item-coin__name-text">
+								<div class="item-coin__name-first">Этика</div>
+								<div class="item-coin__name-second">ЕГАЗ</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-coin__type item-coin__type_investments">
+						<p class="item-coin__type-value">Мастер-ноды</p>
+					</div>
+
+					<div class="item-coin__wallet">
+						<div class="item-coin__wallet-text">Кошелек</div>
+						<div class="item-coin__wallet-value">Os3IGОjkf3jfdqefgB1</div>
+						<div class="item-coin__wallet-copy"><img class="item-coin__wallet-img"
+								src="./img/icons/copy.svg" alt="copy"></div>
+					</div>
+
+					<div class="item-coin__quantity">
+						<div class="item-coin__quantity-text">Количество</div>
+						<div class="item-coin__quantity-value">176,26</div>
+					</div>
+
+					<div class="item-coin__price">
+						<div class="item-coin__price-text">Стоимость</div>
+						<div class="item-coin__price-value">176,26</div>
+					</div>
+
+					<div class="item-coin__balance">
+						<div class="item-coin__balance-text">Баланс</div>
+						<div class="item-coin__balance-value">176,26v</div>
+					</div>
+
+					<div class="item-coin__course">
+						<div class="item-coin__course-text">Курс USDT</div>
+						<div class="item-coin__course-value">
+							<div class="item-coin__course-image"><img class="item-coin__course-img"
+									src="./img/example/USDT-logo.svg" alt="USDT-logo"></div>
+							<span class="item-coin__course-span">34,1</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="mining-briefcase__left-coin item-coin">
+					<div class="item-coin__orientation">
+						<div class="item-coin__order"><span class="item-coin__order-green">#</span>1</div>
+						<div class="item-coin__name">
+							<div class="item-coin__name-image">
+								<img class="item-coin__name-img" src="./img/example/Ethics.png" alt="Ethics">
+							</div>
+							<div class="item-coin__name-text">
+								<div class="item-coin__name-first">Этика</div>
+								<div class="item-coin__name-second">ЕГАЗ</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-coin__type item-coin__type_investments">
+						<p class="item-coin__type-value">Мастер-ноды</p>
+					</div>
+
+					<div class="item-coin__wallet">
+						<div class="item-coin__wallet-text">Кошелек</div>
+						<div class="item-coin__wallet-value">Os3IGОjkf3jfdqefgB1</div>
+						<div class="item-coin__wallet-copy"><img class="item-coin__wallet-img"
+								src="./img/icons/copy.svg" alt="copy"></div>
+					</div>
+
+					<div class="item-coin__quantity">
+						<div class="item-coin__quantity-text">Количество</div>
+						<div class="item-coin__quantity-value">176,26</div>
+					</div>
+
+					<div class="item-coin__price">
+						<div class="item-coin__price-text">Стоимость</div>
+						<div class="item-coin__price-value">176,26</div>
+					</div>
+
+					<div class="item-coin__balance">
+						<div class="item-coin__balance-text">Баланс</div>
+						<div class="item-coin__balance-value">176,26v</div>
+					</div>
+
+					<div class="item-coin__course">
+						<div class="item-coin__course-text">Курс USDT</div>
+						<div class="item-coin__course-value">
+							<div class="item-coin__course-image"><img class="item-coin__course-img"
+									src="./img/example/USDT-logo.svg" alt="USDT-logo"></div>
+							<span class="item-coin__course-span">34,1</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="mining-briefcase__left-coin item-coin">
+					<div class="item-coin__orientation">
+						<div class="item-coin__order"><span class="item-coin__order-green">#</span>1</div>
+						<div class="item-coin__name">
+							<div class="item-coin__name-image">
+								<img class="item-coin__name-img" src="./img/example/Ethics.png" alt="Ethics">
+							</div>
+							<div class="item-coin__name-text">
+								<div class="item-coin__name-first">Этика</div>
+								<div class="item-coin__name-second">ЕГАЗ</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-coin__type item-coin__type_investments">
+						<p class="item-coin__type-value">Мастер-ноды</p>
+					</div>
+
+					<div class="item-coin__wallet">
+						<div class="item-coin__wallet-text">Кошелек</div>
+						<div class="item-coin__wallet-value">Os3IGОjkf3jfdqefgB1</div>
+						<div class="item-coin__wallet-copy"><img class="item-coin__wallet-img"
+								src="./img/icons/copy.svg" alt="copy"></div>
+					</div>
+
+					<div class="item-coin__quantity">
+						<div class="item-coin__quantity-text">Количество</div>
+						<div class="item-coin__quantity-value">176,26</div>
+					</div>
+
+					<div class="item-coin__price">
+						<div class="item-coin__price-text">Стоимость</div>
+						<div class="item-coin__price-value">176,26</div>
+					</div>
+
+					<div class="item-coin__balance">
+						<div class="item-coin__balance-text">Баланс</div>
+						<div class="item-coin__balance-value">176,26v</div>
+					</div>
+
+					<div class="item-coin__course">
+						<div class="item-coin__course-text">Курс USDT</div>
+						<div class="item-coin__course-value">
+							<div class="item-coin__course-image"><img class="item-coin__course-img"
+									src="./img/example/USDT-logo.svg" alt="USDT-logo"></div>
+							<span class="item-coin__course-span">34,1</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="mining-briefcase__left-coin item-coin">
+					<div class="item-coin__orientation">
+						<div class="item-coin__order"><span class="item-coin__order-green">#</span>1</div>
+						<div class="item-coin__name">
+							<div class="item-coin__name-image">
+								<img class="item-coin__name-img" src="./img/example/Ethics.png" alt="Ethics">
+							</div>
+							<div class="item-coin__name-text">
+								<div class="item-coin__name-first">Этика</div>
+								<div class="item-coin__name-second">ЕГАЗ</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-coin__type item-coin__type_investments">
+						<p class="item-coin__type-value">Мастер-ноды</p>
+					</div>
+
+					<div class="item-coin__wallet">
+						<div class="item-coin__wallet-text">Кошелек</div>
+						<div class="item-coin__wallet-value">Os3IGОjkf3jfdqefgB1</div>
+						<div class="item-coin__wallet-copy"><img class="item-coin__wallet-img"
+								src="./img/icons/copy.svg" alt="copy"></div>
+					</div>
+
+					<div class="item-coin__quantity">
+						<div class="item-coin__quantity-text">Количество</div>
+						<div class="item-coin__quantity-value">176,26</div>
+					</div>
+
+					<div class="item-coin__price">
+						<div class="item-coin__price-text">Стоимость</div>
+						<div class="item-coin__price-value">176,26</div>
+					</div>
+
+					<div class="item-coin__balance">
+						<div class="item-coin__balance-text">Баланс</div>
+						<div class="item-coin__balance-value">176,26v</div>
+					</div>
+
+					<div class="item-coin__course">
+						<div class="item-coin__course-text">Курс USDT</div>
+						<div class="item-coin__course-value">
+							<div class="item-coin__course-image"><img class="item-coin__course-img"
+									src="./img/example/USDT-logo.svg" alt="USDT-logo"></div>
+							<span class="item-coin__course-span">34,1</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="mining-briefcase__left-coin item-coin">
+					<div class="item-coin__orientation">
+						<div class="item-coin__order"><span class="item-coin__order-green">#</span>1</div>
+						<div class="item-coin__name">
+							<div class="item-coin__name-image">
+								<img class="item-coin__name-img" src="./img/example/Ethics.png" alt="Ethics">
+							</div>
+							<div class="item-coin__name-text">
+								<div class="item-coin__name-first">Этика</div>
+								<div class="item-coin__name-second">ЕГАЗ</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-coin__type item-coin__type_investments">
+						<p class="item-coin__type-value">Мастер-ноды</p>
+					</div>
+
+					<div class="item-coin__wallet">
+						<div class="item-coin__wallet-text">Кошелек</div>
+						<div class="item-coin__wallet-value">Os3IGОjkf3jfdqefgB1</div>
+						<div class="item-coin__wallet-copy"><img class="item-coin__wallet-img"
+								src="./img/icons/copy.svg" alt="copy"></div>
+					</div>
+
+					<div class="item-coin__quantity">
+						<div class="item-coin__quantity-text">Количество</div>
+						<div class="item-coin__quantity-value">176,26</div>
+					</div>
+
+					<div class="item-coin__price">
+						<div class="item-coin__price-text">Стоимость</div>
+						<div class="item-coin__price-value">176,26</div>
+					</div>
+
+					<div class="item-coin__balance">
+						<div class="item-coin__balance-text">Баланс</div>
+						<div class="item-coin__balance-value">176,26v</div>
+					</div>
+
+					<div class="item-coin__course">
+						<div class="item-coin__course-text">Курс USDT</div>
+						<div class="item-coin__course-value">
+							<div class="item-coin__course-image"><img class="item-coin__course-img"
+									src="./img/example/USDT-logo.svg" alt="USDT-logo"></div>
+							<span class="item-coin__course-span">34,1</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="mining-briefcase__left-coin item-coin">
+					<div class="item-coin__orientation">
+						<div class="item-coin__order"><span class="item-coin__order-green">#</span>1</div>
+						<div class="item-coin__name">
+							<div class="item-coin__name-image">
+								<img class="item-coin__name-img" src="./img/example/Ethics.png" alt="Ethics">
+							</div>
+							<div class="item-coin__name-text">
+								<div class="item-coin__name-first">Этика</div>
+								<div class="item-coin__name-second">ЕГАЗ</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-coin__type item-coin__type_investments">
+						<p class="item-coin__type-value">Мастер-ноды</p>
+					</div>
+
+					<div class="item-coin__wallet">
+						<div class="item-coin__wallet-text">Кошелек</div>
+						<div class="item-coin__wallet-value">Os3IGОjkf3jfdqefgB1</div>
+						<div class="item-coin__wallet-copy"><img class="item-coin__wallet-img"
+								src="./img/icons/copy.svg" alt="copy"></div>
+					</div>
+
+					<div class="item-coin__quantity">
+						<div class="item-coin__quantity-text">Количество</div>
+						<div class="item-coin__quantity-value">176,26</div>
+					</div>
+
+					<div class="item-coin__price">
+						<div class="item-coin__price-text">Стоимость</div>
+						<div class="item-coin__price-value">176,26</div>
+					</div>
+
+					<div class="item-coin__balance">
+						<div class="item-coin__balance-text">Баланс</div>
+						<div class="item-coin__balance-value">176,26v</div>
+					</div>
+
+					<div class="item-coin__course">
+						<div class="item-coin__course-text">Курс USDT</div>
+						<div class="item-coin__course-value">
+							<div class="item-coin__course-image"><img class="item-coin__course-img"
+									src="./img/example/USDT-logo.svg" alt="USDT-logo"></div>
+							<span class="item-coin__course-span">34,1</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="mining-briefcase__left-coin item-coin">
+					<div class="item-coin__orientation">
+						<div class="item-coin__order"><span class="item-coin__order-green">#</span>1</div>
+						<div class="item-coin__name">
+							<div class="item-coin__name-image">
+								<img class="item-coin__name-img" src="./img/example/Ethics.png" alt="Ethics">
+							</div>
+							<div class="item-coin__name-text">
+								<div class="item-coin__name-first">Этика</div>
+								<div class="item-coin__name-second">ЕГАЗ</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-coin__type item-coin__type_investments">
+						<p class="item-coin__type-value">Мастер-ноды</p>
+					</div>
+
+					<div class="item-coin__wallet">
+						<div class="item-coin__wallet-text">Кошелек</div>
+						<div class="item-coin__wallet-value">Os3IGОjkf3jfdqefgB1</div>
+						<div class="item-coin__wallet-copy"><img class="item-coin__wallet-img"
+								src="./img/icons/copy.svg" alt="copy"></div>
+					</div>
+
+					<div class="item-coin__quantity">
+						<div class="item-coin__quantity-text">Количество</div>
+						<div class="item-coin__quantity-value">176,26</div>
+					</div>
+
+					<div class="item-coin__price">
+						<div class="item-coin__price-text">Стоимость</div>
+						<div class="item-coin__price-value">176,26</div>
+					</div>
+
+					<div class="item-coin__balance">
+						<div class="item-coin__balance-text">Баланс</div>
+						<div class="item-coin__balance-value">176,26v</div>
+					</div>
+
+					<div class="item-coin__course">
+						<div class="item-coin__course-text">Курс USDT</div>
+						<div class="item-coin__course-value">
+							<div class="item-coin__course-image"><img class="item-coin__course-img"
+									src="./img/example/USDT-logo.svg" alt="USDT-logo"></div>
+							<span class="item-coin__course-span">34,1</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="mining-briefcase__left-coin item-coin">
+					<div class="item-coin__orientation">
+						<div class="item-coin__order"><span class="item-coin__order-green">#</span>1</div>
+						<div class="item-coin__name">
+							<div class="item-coin__name-image">
+								<img class="item-coin__name-img" src="./img/example/Ethics.png" alt="Ethics">
+							</div>
+							<div class="item-coin__name-text">
+								<div class="item-coin__name-first">Этика</div>
+								<div class="item-coin__name-second">ЕГАЗ</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-coin__type item-coin__type_investments">
+						<p class="item-coin__type-value">Мастер-ноды</p>
+					</div>
+
+					<div class="item-coin__wallet">
+						<div class="item-coin__wallet-text">Кошелек</div>
+						<div class="item-coin__wallet-value">Os3IGОjkf3jfdqefgB1</div>
+						<div class="item-coin__wallet-copy"><img class="item-coin__wallet-img"
+								src="./img/icons/copy.svg" alt="copy"></div>
+					</div>
+
+					<div class="item-coin__quantity">
+						<div class="item-coin__quantity-text">Количество</div>
+						<div class="item-coin__quantity-value">176,26</div>
+					</div>
+
+					<div class="item-coin__price">
+						<div class="item-coin__price-text">Стоимость</div>
+						<div class="item-coin__price-value">176,26</div>
+					</div>
+
+					<div class="item-coin__balance">
+						<div class="item-coin__balance-text">Баланс</div>
+						<div class="item-coin__balance-value">176,26v</div>
+					</div>
+
+					<div class="item-coin__course">
+						<div class="item-coin__course-text">Курс USDT</div>
+						<div class="item-coin__course-value">
+							<div class="item-coin__course-image"><img class="item-coin__course-img"
+									src="./img/example/USDT-logo.svg" alt="USDT-logo"></div>
+							<span class="item-coin__course-span">34,1</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="mining-briefcase__left-coin item-coin">
+					<div class="item-coin__orientation">
+						<div class="item-coin__order"><span class="item-coin__order-green">#</span>1</div>
+						<div class="item-coin__name">
+							<div class="item-coin__name-image">
+								<img class="item-coin__name-img" src="./img/example/Ethics.png" alt="Ethics">
+							</div>
+							<div class="item-coin__name-text">
+								<div class="item-coin__name-first">Этика</div>
+								<div class="item-coin__name-second">ЕГАЗ</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-coin__type item-coin__type_investments">
+						<p class="item-coin__type-value">Мастер-ноды</p>
+					</div>
+
+					<div class="item-coin__wallet">
+						<div class="item-coin__wallet-text">Кошелек</div>
+						<div class="item-coin__wallet-value">Os3IGОjkf3jfdqefgB1</div>
+						<div class="item-coin__wallet-copy"><img class="item-coin__wallet-img"
+								src="./img/icons/copy.svg" alt="copy"></div>
+					</div>
+
+					<div class="item-coin__quantity">
+						<div class="item-coin__quantity-text">Количество</div>
+						<div class="item-coin__quantity-value">176,26</div>
+					</div>
+
+					<div class="item-coin__price">
+						<div class="item-coin__price-text">Стоимость</div>
+						<div class="item-coin__price-value">176,26</div>
+					</div>
+
+					<div class="item-coin__balance">
+						<div class="item-coin__balance-text">Баланс</div>
+						<div class="item-coin__balance-value">176,26v</div>
+					</div>
+
+					<div class="item-coin__course">
+						<div class="item-coin__course-text">Курс USDT</div>
+						<div class="item-coin__course-value">
+							<div class="item-coin__course-image"><img class="item-coin__course-img"
+									src="./img/example/USDT-logo.svg" alt="USDT-logo"></div>
+							<span class="item-coin__course-span">34,1</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="mining-briefcase__right">
+			<div class="mining-briefcase__right-sum">
+				<div class="mining-briefcase__right-currency">
+					<div class="mining-briefcase__right-text">
+						<p class="mining-briefcase__right-strong">Итого</p>
+						<p class="mining-briefcase__right-thin">USDT</p>
+					</div>
+					<div class="mining-briefcase__right-value">30 556,20</div>
+				</div>
+				<div class="mining-briefcase__right-currency">
+					<div class="mining-briefcase__right-text">
+						<p class="mining-briefcase__right-strong">Итого</p>
+						<p class="mining-briefcase__right-thin">РУБ</p>
+					</div>
+					<div class="mining-briefcase__right-value">300 654,26</div>
+				</div>
+			</div>
+
+			<div class="mining-briefcase__right-background">
+				<img class="mining-briefcase__right-img" src="./img/briefcase/Investments.png" alt="mining">
+			</div>
+		</div>
+	</main>
+
+	<script type="text/javascript" src="./media.js"></script>
+</body>
+
+</html>

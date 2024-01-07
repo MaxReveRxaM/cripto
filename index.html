@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AVERS MULTIMINING</title>
+	<link type="text/css" rel="stylesheet" href="./style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+</head>
+
+<body>
+
+	<main class="main-page">
+		<div class="main-page__background">
+			<img class="main-page__background-img" src="./img/main-Image.png" alt="main-Image">
+		</div>
+
+		<div class="main-page__header">
+			<div class="main-page__header-left">
+				<div class="main-page__header-logo">
+					<img class="main-page__header-logoMain" src="./img/icons/logo-main.svg" alt="logo-main">
+				</div>
+			</div>
+			<div class="main-page__header-right">
+				<div class="main-page__header-buttons">
+					<button class="main-page__header-personal"
+						onclick="openModal('main-page__authorization', 'main-page__modal-item_active')"><img
+							src="./img/icons/men.svg" alt="men">В личный
+						кабинет</button>
+					<button class="main-page__header-phone"
+						onclick="openModal('main-page__phone', 'main-page__modal-item_active')"><img
+							src="./img/icons/phone.svg" alt="phone"></button>
+					<a href="https://telegram.org/" class="main-page__header-telegram"><img
+							src="./img/icons/telegram.svg" alt="telegram"></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="main-page__title">
+			<p class="main-page__title-big">Создание <span class="main-page__title-green">бизнес-моделей</span> в
+				криптовалюте</p>
+			<p class="main-page__title-little">Индивидуальные комплексые решения</p>
+			<button class="main-page__title-personal"><img src="./img/icons/men.svg" alt="men">В личный
+				кабинет</button>
+		</div>
+
+		<div class="main-page__carousel">
+			<p class="main-page__carousel-alert">Сайт находится на стадии разработки</p>
+			<div class="main-page__carousel-wrap">
+				<div class="main-page__carousel-scroll">
+					<div class="main-page__carousel-content">
+						<div class="main-page__carousel-item"></div>
+						<div class="main-page__carousel-item"></div>
+						<div class="main-page__carousel-item"></div>
+						<div class="main-page__carousel-item"></div>
+						<div class="main-page__carousel-item"></div>
+						<div class="main-page__carousel-item"></div>
+						<div class="main-page__carousel-item"></div>
+						<div class="main-page__carousel-item"></div>
+						<div class="main-page__carousel-item"></div>
+						<div class="main-page__carousel-item"></div>
+						<div class="main-page__carousel-item"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="main-page__modal">
+			<div class="main-page__authorization main-page__modal-item">
+				<button class="main-page__modal-close" onclick="closeModal('main-page__modal-item', 'main-page__modal-item_active')">
+					<div class="main-page__modal-line"></div>
+					<div class="main-page__modal-line"></div>
+				</button>
+				<div class="main-page__modal-container">
+					<h2 class="main-page__modal-title">Здравствуйте!</h2>
+					<p class="main-page__modal-paragraph">Для того, чтобы войти в личный кабинет,
+						введите ваши данные</p>
+					<form class="main-page__modal-form" action="#" method="post">
+						<div class="main-page__modal-content">
+							<div class="main-page__modal-name input-wrap">
+								<input class="main-page__modal-input form-input" placeholder="Логин" type="text"
+									id="username" name="username" required>
+								<label class="main-page__modal-label form-label" for="username">Логин</label>
+							</div>
+							<div class="main-page__modal-password input-wrap">
+								<input class="main-page__modal-input form-input" placeholder="Пароль" type="password"
+									id="password" name="password" required>
+								<label class="main-page__modal-label form-label" for="password">Пароль</label>
+							</div>
+							<div class="main-page__modal-buttons">
+								<label class="main-page__modal-checkbox">
+									<input class="main-page__modal-check" type="checkbox" name="remember"> Запомнить
+									меня
+								</label>
+								<div class="main-page__modal-recall"
+									onclick="openModal('main-page__recovery', 'main-page__modal-item_active')">Забыли
+									пароль?</div>
+							</div>
+						</div>
+						<button class="main-page__modal-submit" type="submit"><img src="./img/icons/men.svg"
+								alt="men">Войти в личный кабинет</button>
+					</form>
+				</div>
+			</div>
+
+			<div class="main-page__recovery main-page__modal-item">
+				<button class="main-page__modal-close" onclick="closeModal('main-page__modal-item', 'main-page__modal-item_active')">
+					<div class="main-page__modal-line"></div>
+					<div class="main-page__modal-line"></div>
+				</button>
+				<div class="main-page__modal-container"
+					onclick="closeModal('main-page__recovery', 'main-page__modal-item_active')">
+					<button class="main-page__modal-back"> <img src="./img/icons/white-arrow.svg" alt="white-arrow">
+						Назад</button>
+					<h2 class="main-page__modal-title">Восстановление пароля</h2>
+					<p class="main-page__modal-paragraph">Введите электронную почту, на которую мы пришлем
+						временный пароль для входа в личный кабинет</p>
+					<form class="main-page__modal-form" action="#" method="post">
+						<div class="main-page__modal-content">
+							<div class="main-page__modal-mail input-wrap">
+								<input class="main-page__modal-input form-input" placeholder="E-mail" type="text"
+									id="username" name="username" required>
+								<label class="main-page__modal-label form-label" for="username">E-mail</label>
+							</div>
+						</div>
+						<button class="main-page__modal-submit" type="submit">Отправить</button>
+					</form>
+				</div>
+			</div>
+
+			<div class="main-page__phone main-page__modal-item">
+				<button class="main-page__modal-close" onclick="closeModal('main-page__modal-item', 'main-page__modal-item_active')">
+					<div class="main-page__modal-line"></div>
+					<div class="main-page__modal-line"></div>
+				</button>
+				<div class="main-page__modal-container">
+					<h2 class="main-page__modal-title">Заказать звонок</h2>
+					<p class="main-page__modal-paragraph">Введите данные и мы обязательно вам позвоним</p>
+					<form class="main-page__modal-form" action="#" method="post">
+						<div class="main-page__modal-content">
+							<div class="main-page__modal-name input-wrap">
+								<input class="main-page__modal-input form-input" placeholder="Имя" type="text"
+									id="username" name="username" required>
+								<label class="main-page__modal-label form-label" for="username">Имя</label>
+							</div>
+							<div class="main-page__modal-password input-wrap">
+								<input class="main-page__modal-input form-input form-input--phone" placeholder="Телефон"
+									type="phone" id="password" name="phone" required>
+								<label class="main-page__modal-label form-label" for="password">Телефон</label>
+							</div>
+							<div class="main-page__modal-buttons">
+								<label class="main-page__modal-checkbox">
+									<input class="main-page__modal-check" type="checkbox" name="remember"> Я согласен на
+									обработку <span>персональных данных</span>
+								</label>
+							</div>
+						</div>
+						<button class="main-page__modal-submit" type="submit"><img src="./img/icons/phone.svg"
+								alt="phone">Заказать звонок</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</main>
+
+	<script type="text/javascript" src="./media.js"></script>
+</body>
+
+</html>

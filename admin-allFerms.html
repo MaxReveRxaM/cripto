@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Все фермы</title>
+	<link type="text/css" rel="stylesheet" href="./style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="header__container">
+			<div class="header__burger" onclick="showMenu()">
+				<div class="header__burger-line"></div>
+				<div class="header__burger-line"></div>
+				<div class="header__burger-line"></div>
+			</div>
+			<div class="header__mobile-logo mobile-logo">
+				<a class="mobile-logo__link" href="/"><img class="mobile-logo__link-img"
+						src="./img/icons/color-logo.svg" alt="color-logo"></a>
+			</div>
+			<div class="header__menu">
+				<nav class="header__nav">
+					<div class="header__nav-up">
+						<div class="header__nav-logo nav-logo">
+							<a class="nav-logo__link" href="/"><img class="nav-logo__img"
+									src="./img/icons/color-logo.svg" alt="color-logo"></a>
+						</div>
+						<div class="header__nav-links">
+							<a href="./admin-allFerms.html" class="header__nav-link header__nav-link_active">
+								<div class="header__nav-image"><img src="./img/icons/house.svg" alt="briefcase"
+										class="header__nav-img"></div>Все фермы
+							</a>
+						</div>
+						<div class="header__nav-links">
+							<a href="./admin-users.html" class="header__nav-link">
+								<div class="header__nav-image"><img src="./img/icons/database.svg" alt="house"
+										class="header__nav-img"></div>База данных
+							</a>
+						</div>
+						<div class="header__nav-links">
+							<a href="./admin-calculator.html" class="header__nav-link">
+								<div class="header__nav-image"><img src="./img/icons/calculator.svg" alt="info"
+										class="header__nav-img"></div>Калькулятор
+							</a>
+						</div>
+						<div class="header__nav-admin nav-admin">
+							<div class="nav-admin__selector select-drop">
+								<div class="select-drop__arrow">
+									<img class="select-drop__arrow-img" src="./img/icons/simple-green-arrow.svg" alt="">
+								</div>
+								<div class="select-drop__input-wrap">
+									<input class="select-drop__input" placeholder="Все клиенты" name="name" value="" type="text" readonly="">
+								</div>
+								<div class="select-drop__list">
+									<div class="select-drop__list-item">Константинов Константин</div>
+									<div class="select-drop__list-item">Снетков Дмитрий</div>
+									<div class="select-drop__list-item">Гоги Вася Ваааааа</div>
+								</div>
+							</div>
+							<a class="nav-admin__link" href="">Портфель</a>
+							<a class="nav-admin__link" href="">Фермы</a>
+						</div>
+					</div>
+				</nav>
+
+				<div class="header__interaction">
+					<div class="header__interaction-left interaction-left">
+						<div class="interaction-left__wrap">
+							<div class="interaction-left__image">
+								<img class="interaction-left__img" src="./img/example/client.jpg" alt="client">
+							</div>
+							<div class="interaction-left__name">
+								<p>Константин</p>
+								<p>Вениаминов</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="header__interaction-right interaction-right">
+						<div class="interaction-right__theme">
+							<div class="interaction-right__theme-image interaction-right__theme-image_active">
+								<img class="interaction-right__theme-img" src="./img/icons/light-theme.svg"
+									alt="light-theme">
+							</div>
+							<div class="interaction-right__theme-image">
+								<img class="interaction-right__theme-img" src="./img/icons/dark-theme.svg"
+									alt="dark-theme">
+							</div>
+						</div>
+						<div class="interaction-right__languages">
+							<div class="interaction-right__languages-item languages-item">
+								<div class="languages-item__flag">
+									<img class="languages-item__img" src="./img/icons/ru.svg" alt="ru">
+								</div>
+								<div class="languages-item__text">RU</div>
+							</div>
+						</div>
+						<div class="interaction-right__exit">
+							<div class="interaction-right__exit-image">
+								<img class="interaction-right__exit-img" src="./img/icons/exit.svg" alt="exit">
+							</div>
+							<div class="interaction-right__exit-text">Выйти</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main class="main-content all-farms">
+
+		<div class="all-farms__search">
+			<input placeholder="Поиск фермы" class="all-farms__search-input" type="text">
+		</div>
+
+		<div class="all-farms__content">
+			<div class="all-farms__content-up">
+				<div class="all-farms__content-type all-farms__content-type_id">ID</div>
+				<div class="all-farms__content-type all-farms__content-type_name">НАЗВАНИЕ ФЕРМЫ</div>
+				<div class="all-farms__content-type all-farms__content-type_work">РАБОЧИЕ</div>
+				<div class="all-farms__content-type all-farms__content-type_graph">ГРАФ. ПРОЦЕССОРЫ</div>
+			</div>
+			<div class="all-farms__content-list">
+				<a href="" class="all-farms__content-item">
+					<div class="all-farms__content-id"><span class="all-farms__content-green">#</span>330871</div>
+					<div class="all-farms__content-name">Снетков Дмитрий</div>
+					<div class="all-farms__content-work"><div class="all-farms__content-mobile">РАБОЧИЕ</div><span class="all-farms__content-green">10</span>/10</div>
+					<div class="all-farms__content-graph"><div class="all-farms__content-mobile">ГРАФ. ПРОЦЕССОРЫ</div><span class="all-farms__content-green">60</span>/<span class="all-farms__content-green">60</span>0</div>
+					<div class="all-farms__content-more">
+						<span>Подробнее</span>
+						<div class="all-farms__content-image">
+							<img class="all-farms__content-img" src="./img/icons/green-arrow.svg" alt="green-arrow">
+						</div>
+					</div>
+				</a>
+
+				<a href="" class="all-farms__content-item">
+					<div class="all-farms__content-id"><span class="all-farms__content-green">#</span>#3110478</div>
+					<div class="all-farms__content-name">ферма urugi932</div>
+					<div class="all-farms__content-work"><div class="all-farms__content-mobile">РАБОЧИЕ</div><span class="all-farms__content-green">0</span>/1</div>
+					<div class="all-farms__content-graph"><div class="all-farms__content-mobile">ГРАФ. ПРОЦЕССОРЫ</div>0/<span class="all-farms__content-green">3</span>0</div>
+					<div class="all-farms__content-more">
+						<span>Подробнее</span>
+						<div class="all-farms__content-image">
+							<img class="all-farms__content-img" src="./img/icons/green-arrow.svg" alt="green-arrow">
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+	</main>
+
+	<script type="text/javascript" src="./media.js"></script>
+</body>
+
+</html>

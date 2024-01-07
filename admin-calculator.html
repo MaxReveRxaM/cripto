@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Калькулятор</title>
+	<link type="text/css" rel="stylesheet" href="./css/pikaday.css">
+	<link type="text/css" rel="stylesheet" href="./style.css">
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/jquery.mask.min.js"></script>
+	<script src="./js/pikaday.js"></script>
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="header__container">
+			<div class="header__burger" onclick="showMenu()">
+				<div class="header__burger-line"></div>
+				<div class="header__burger-line"></div>
+				<div class="header__burger-line"></div>
+			</div>
+			<div class="header__mobile-logo mobile-logo">
+				<a class="mobile-logo__link" href="/"><img class="mobile-logo__link-img"
+						src="./img/icons/color-logo.svg" alt="color-logo"></a>
+			</div>
+			<div class="header__menu">
+				<nav class="header__nav">
+					<div class="header__nav-up">
+						<div class="header__nav-logo nav-logo">
+							<a class="nav-logo__link" href="/"><img class="nav-logo__img"
+									src="./img/icons/color-logo.svg" alt="color-logo"></a>
+						</div>
+						<div class="header__nav-links">
+							<a href="./admin-allFerms.html" class="header__nav-link">
+								<div class="header__nav-image"><img src="./img/icons/house.svg" alt="briefcase"
+										class="header__nav-img"></div>Все фермы
+							</a>
+						</div>
+						<div class="header__nav-links">
+							<a href="./admin-users.html" class="header__nav-link">
+								<div class="header__nav-image"><img src="./img/icons/database.svg" alt="house"
+										class="header__nav-img"></div>База данных
+							</a>
+						</div>
+						<div class="header__nav-links">
+							<a href="./admin-calculator.html" class="header__nav-link header__nav-link_active">
+								<div class="header__nav-image"><img src="./img/icons/calculator.svg" alt="info"
+										class="header__nav-img"></div>Калькулятор
+							</a>
+						</div>
+						<div class="header__nav-admin nav-admin">
+							<div class="nav-admin__selector select-drop">
+								<div class="select-drop__arrow">
+									<img class="select-drop__arrow-img" src="./img/icons/simple-green-arrow.svg" alt="">
+								</div>
+								<div class="select-drop__input-wrap">
+									<input class="select-drop__input" placeholder="Все клиенты" name="name" value=""
+										type="text" readonly="">
+								</div>
+								<div class="select-drop__list">
+									<div class="select-drop__list-item">Константинов Константин</div>
+									<div class="select-drop__list-item">Снетков Дмитрий</div>
+									<div class="select-drop__list-item">Гоги Вася Ваааааа</div>
+								</div>
+							</div>
+							<a class="nav-admin__link" href="">Портфель</a>
+							<a class="nav-admin__link" href="">Фермы</a>
+						</div>
+					</div>
+				</nav>
+
+				<div class="header__interaction">
+					<div class="header__interaction-left interaction-left">
+						<div class="interaction-left__wrap">
+							<div class="interaction-left__image">
+								<img class="interaction-left__img" src="./img/example/client.jpg" alt="client">
+							</div>
+							<div class="interaction-left__name">
+								<p>Константин</p>
+								<p>Вениаминов</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="header__interaction-right interaction-right">
+						<div class="interaction-right__theme">
+							<div class="interaction-right__theme-image interaction-right__theme-image_active">
+								<img class="interaction-right__theme-img" src="./img/icons/light-theme.svg"
+									alt="light-theme">
+							</div>
+							<div class="interaction-right__theme-image">
+								<img class="interaction-right__theme-img" src="./img/icons/dark-theme.svg"
+									alt="dark-theme">
+							</div>
+						</div>
+						<div class="interaction-right__languages">
+							<div class="interaction-right__languages-item languages-item">
+								<div class="languages-item__flag">
+									<img class="languages-item__img" src="./img/icons/ru.svg" alt="ru">
+								</div>
+								<div class="languages-item__text">RU</div>
+							</div>
+						</div>
+						<div class="interaction-right__exit">
+							<div class="interaction-right__exit-image">
+								<img class="interaction-right__exit-img" src="./img/icons/exit.svg" alt="exit">
+							</div>
+							<div class="interaction-right__exit-text">Выйти</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main class="main-content main-calculator">
+
+		<div class="main-calculator__content">
+
+			<div class="main-calculator_left">
+				<div class="main-calculator_left-selects">
+					<div class="main-calculator__drop calculator-drop">
+						<div class="calculator-drop__arrow">
+							<img class="calculator-drop__arrow-img" src="./img/icons/simple-green-arrow.svg" alt="">
+						</div>
+						<div class="calculator-drop__input-wrap">
+							<div class="calculator-drop__input-image">
+
+							</div>
+							<input class="calculator-drop__input" placeholder="Клиенты" name="name" value="" type="text"
+								readonly="">
+						</div>
+						<div class="calculator-drop__list">
+							<div class="calculator-drop__list-item">
+								<div class="calculator-drop__list-image">
+									<img class="calculator-drop__list-img" src="./img/example/Neoxa.png" alt="Neoxa">
+								</div>
+								<div class="calculator-drop__list-text">Неокса</div>
+							</div>
+							<div class="calculator-drop__list-item">
+								<div class="calculator-drop__list-image">
+									<img class="calculator-drop__list-img" src="./img/example/Ethics.png" alt="Ethics">
+								</div>
+								<div class="calculator-drop__list-text">Этика</div>
+							</div>
+							<div class="calculator-drop__list-item">
+								<div class="calculator-drop__list-image">
+									<img class="calculator-drop__list-img" src="./img/example/Alephium.png"
+										alt="Alephium">
+								</div>
+								<div class="calculator-drop__list-text">Алефиум</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="main-calculator__wallet input-wrap">
+					<input class="main-calculator__wallet-input form-input" placeholder="Введите номер кошелька"
+						type="text" id="username" name="login" required="">
+					<label class="main-calculator__wallet-label form-label" for="username">Введите номер
+						кошелька</label>
+				</div>
+
+			</div>
+
+			<div class="main-calculator__right">
+
+				<div class="main-calculator__calendars">
+					<div class="main-calculator__calendars-mobile" onclick="openModal('main-calculator__calendar', 'main-calculator__calendar_active')">
+						<div class="main-calculator__calendars-image"><img class="main-calculator__calendars-img"
+								src="./img/icons/calendar.svg" alt="calendar"></div>
+						<div class="main-calculator__calendar-mobile">
+							<input class="main-calculator__calendar-input" type="text" id="startDate"
+								placeholder="__.__.____" readonly>
+						</div>
+						<div class="main-calculator__calendar-dash">-</div>
+						<div class="main-calculator__calendar-mobile">
+							<input class="main-calculator__calendar-input" type="text" id="endDate"
+								placeholder="__.__.____" readonly>
+						</div>
+					</div>
+
+					<div class="main-calculator__calendar-wrap">
+						<div class="main-calculator__calendar main-calculator__start-date" id="start-date">
+							<div class="main-calculator__calendar-close" onclick="closeModal('main-calculator__start-date', 'main-calculator__calendar_active')">СЛЕДУЮЩАЯ ДАТА</div>
+						</div>
+						<div class="main-calculator__calendar main-calculator__final-date" id="final-date">
+							<div class="main-calculator__calendar-close" onclick="closeModal('main-calculator__final-date', 'main-calculator__calendar_active')">ВЫБРАТЬ</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="main-calculator__compute">
+					<div class="main-calculator__results">
+						<div class="main-calculator__result">
+							<div class="main-calculator__result-left">
+								<div class="main-calculator__result-title">НАЧАЛО</div>
+								<div class="main-calculator__result-text">
+									<span class="main-calculator__result-green">UTC</span>
+									<span class="main-calculator__result-black">17030051199</span>
+								</div>
+							</div>
+							<div class="main-calculator__result-right">
+								<input class="main-calculator__result-input" type="text" id="startDateResults"
+									placeholder="__.__.____" readonly>
+							</div>
+						</div>
+						<div class="main-calculator__result">
+							<div class="main-calculator__result-left">
+								<div class="main-calculator__result-title">КОНЕЦ</div>
+								<div class="main-calculator__result-text">
+									<span class="main-calculator__result-green">UTC</span>
+									<span class="main-calculator__result-black">17030051199</span>
+								</div>
+							</div>
+							<div class="main-calculator__result-right">
+								<input class="main-calculator__result-input" type="text" id="endDateResults"
+									placeholder="__.__.____" readonly>
+							</div>
+						</div>
+					</div>
+					<button class="main-calculator__compute-button">Получить транзакцию</button>
+				</div>
+
+			</div>
+
+		</div>
+
+
+	</main>
+
+	<script>
+		var startDateInput = document.getElementById('startDate');
+		var endDateInput = document.getElementById('endDate');
+		var startDateResultsInput = document.getElementById('startDateResults');
+		var endDateResultsInput = document.getElementById('endDateResults');
+		var startDate, endDate;
+
+		// Русская локализация
+		var russianLocale = {
+			previousMonth: 'Предыдущий месяц',
+			nextMonth: 'Следующий месяц',
+			months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+			weekdays: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+			weekdaysShort: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб']
+		};
+
+		function highlightDates(picker) {
+			var dates = picker.el.querySelectorAll('.pika-button');
+			dates.forEach(function (date) {
+				var dateObj = new Date(date.getAttribute('data-pika-year'), date.getAttribute('data-pika-month'), date.getAttribute('data-pika-day'));
+				if (startDate && endDate && dateObj > startDate && dateObj < endDate) {
+					date.classList.add('highlighted-date');
+				} else {
+					date.classList.remove('highlighted-date');
+				}
+			});
+		}
+
+		function formatDate(date) {
+			var day = ('0' + date.getDate()).slice(-2);
+			var month = ('0' + (date.getMonth() + 1)).slice(-2);
+			var year = date.getFullYear();
+			return day + '.' + month + '.' + year;
+		}
+
+		var startDatePicker = new Pikaday({
+			field: startDateInput,
+			bound: false,
+			container: document.getElementById('start-date'),
+			i18n: russianLocale,
+			firstDay: 1,
+			format: 'DD.MM.YYYY',
+			onSelect: function (date) {
+				startDate = date;
+				startDateInput.value = formatDate(date);
+				startDateResultsInput.value = formatDate(date);
+				endDatePicker.setMinDate(date);
+				highlightDates(startDatePicker);
+				highlightDates(endDatePicker);
+			}
+		});
+
+		var endDatePicker = new Pikaday({
+			field: endDateInput,
+			bound: false,
+			container: document.getElementById('final-date'),
+			i18n: russianLocale,
+			firstDay: 1,
+			format: 'DD.MM.YYYY',
+			onSelect: function (date) {
+				endDate = date;
+				endDateInput.value = formatDate(date);
+				endDateResultsInput.value = formatDate(date);
+				startDatePicker.setMaxDate(date);
+				highlightDates(startDatePicker);
+				highlightDates(endDatePicker);
+			}
+		});
+
+
+		startDatePicker.show();
+		endDatePicker.show();
+
+		startDatePicker.hide = endDatePicker.hide = function () { };
+
+	</script>
+
+	<script defer>
+// Получаем все элементы с классом "main-calculator__calendar"
+var calendars = document.querySelectorAll('.main-calculator__calendar');
+
+// Функция для удаления классов активных дат
+function removeActiveClasses() {
+  calendars.forEach(function(calendar) {
+    calendar.classList.remove('main-calculator__start-date_active', 'main-calculator__final-date_active');
+  });
+}
+
+// Добавляем обработчик события click для всего документа
+document.body.addEventListener('click', function(event) {
+  // Проверяем, была ли нажата кнопка с классом "pika-button"
+  if (event.target.classList.contains('pika-button')) {
+    // При нажатии кнопки удаляем активные классы у элементов с календарем
+    removeActiveClasses();
+  }
+});
+
+	</script>
+	<script type="text/javascript" src="./media.js"></script>
+</body>
+
+</html>
