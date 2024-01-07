@@ -25,9 +25,13 @@
 			</div>
 			<div class="main-page__header-right">
 				<div class="main-page__header-buttons">
-					<button class="main-page__header-personal"><img src="./img/icons/men.svg" alt="men">В личный
+					<button class="main-page__header-personal"
+						onclick="openModal('main-page__authorization', 'main-page__modal-item_active')"><img
+							src="./img/icons/men.svg" alt="men">В личный
 						кабинет</button>
-					<button class="main-page__header-phone"><img src="./img/icons/phone.svg" alt="phone"></button>
+					<button class="main-page__header-phone"
+						onclick="openModal('main-page__phone', 'main-page__modal-item_active')"><img
+							src="./img/icons/phone.svg" alt="phone"></button>
 					<a href="https://telegram.org/" class="main-page__header-telegram"><img
 							src="./img/icons/telegram.svg" alt="telegram"></a>
 				</div>
@@ -64,11 +68,11 @@
 		</div>
 
 		<div class="main-page__modal">
-			<button class="main-page__modal-close">
-				<div class="main-page__modal-line"></div>
-				<div class="main-page__modal-line"></div>
-			</button>
 			<div class="main-page__authorization main-page__modal-item">
+				<button class="main-page__modal-close" onclick="closeModal('main-page__modal-item', 'main-page__modal-item_active')">
+					<div class="main-page__modal-line"></div>
+					<div class="main-page__modal-line"></div>
+				</button>
 				<div class="main-page__modal-container">
 					<h2 class="main-page__modal-title">Здравствуйте!</h2>
 					<p class="main-page__modal-paragraph">Для того, чтобы войти в личный кабинет,
@@ -78,18 +82,21 @@
 							<div class="main-page__modal-name input-wrap">
 								<input class="main-page__modal-input form-input" placeholder="Логин" type="text"
 									id="username" name="username" required>
-									<label class="main-page__modal-label form-label" for="username">Логин</label>
+								<label class="main-page__modal-label form-label" for="username">Логин</label>
 							</div>
 							<div class="main-page__modal-password input-wrap">
-								<input class="main-page__modal-input form-input" placeholder="Пароль"
-									type="password" id="password" name="password" required>
+								<input class="main-page__modal-input form-input" placeholder="Пароль" type="password"
+									id="password" name="password" required>
 								<label class="main-page__modal-label form-label" for="password">Пароль</label>
 							</div>
 							<div class="main-page__modal-buttons">
 								<label class="main-page__modal-checkbox">
-									<input class="main-page__modal-check" type="checkbox" name="remember"> Запомнить меня
+									<input class="main-page__modal-check" type="checkbox" name="remember"> Запомнить
+									меня
 								</label>
-								<div class="main-page__modal-recall">Забыли пароль?</div>
+								<div class="main-page__modal-recall"
+									onclick="openModal('main-page__recovery', 'main-page__modal-item_active')">Забыли
+									пароль?</div>
 							</div>
 						</div>
 						<button class="main-page__modal-submit" type="submit"><img src="./img/icons/men.svg"
@@ -99,8 +106,14 @@
 			</div>
 
 			<div class="main-page__recovery main-page__modal-item">
-				<div class="main-page__modal-container">
-					<button class="main-page__modal-back"> <img src="./img/icons/white-arrow.svg" alt="white-arrow"> Назад</button>
+				<button class="main-page__modal-close" onclick="closeModal('main-page__modal-item', 'main-page__modal-item_active')">
+					<div class="main-page__modal-line"></div>
+					<div class="main-page__modal-line"></div>
+				</button>
+				<div class="main-page__modal-container"
+					onclick="closeModal('main-page__recovery', 'main-page__modal-item_active')">
+					<button class="main-page__modal-back"> <img src="./img/icons/white-arrow.svg" alt="white-arrow">
+						Назад</button>
 					<h2 class="main-page__modal-title">Восстановление пароля</h2>
 					<p class="main-page__modal-paragraph">Введите электронную почту, на которую мы пришлем
 						временный пароль для входа в личный кабинет</p>
@@ -118,6 +131,10 @@
 			</div>
 
 			<div class="main-page__phone main-page__modal-item">
+				<button class="main-page__modal-close" onclick="closeModal('main-page__modal-item', 'main-page__modal-item_active')">
+					<div class="main-page__modal-line"></div>
+					<div class="main-page__modal-line"></div>
+				</button>
 				<div class="main-page__modal-container">
 					<h2 class="main-page__modal-title">Заказать звонок</h2>
 					<p class="main-page__modal-paragraph">Введите данные и мы обязательно вам позвоним</p>
@@ -135,7 +152,8 @@
 							</div>
 							<div class="main-page__modal-buttons">
 								<label class="main-page__modal-checkbox">
-									<input class="main-page__modal-check" type="checkbox" name="remember"> Я согласен на обработку <span>персональных данных</span>
+									<input class="main-page__modal-check" type="checkbox" name="remember"> Я согласен на
+									обработку <span>персональных данных</span>
 								</label>
 							</div>
 						</div>

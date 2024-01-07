@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>База данных/Пользователи</title>
+	<link type="text/css" rel="stylesheet" href="./style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="header__container">
+			<div class="header__burger" onclick="showMenu()">
+				<div class="header__burger-line"></div>
+				<div class="header__burger-line"></div>
+				<div class="header__burger-line"></div>
+			</div>
+			<div class="header__mobile-logo mobile-logo">
+				<a class="mobile-logo__link" href="/"><img class="mobile-logo__link-img"
+						src="./img/icons/color-logo.svg" alt="color-logo"></a>
+			</div>
+			<div class="header__menu">
+				<nav class="header__nav">
+					<div class="header__nav-up">
+						<div class="header__nav-logo nav-logo">
+							<a class="nav-logo__link" href="/"><img class="nav-logo__img"
+									src="./img/icons/color-logo.svg" alt="color-logo"></a>
+						</div>
+						<div class="header__nav-links">
+							<a href="" class="header__nav-link ">
+								<div class="header__nav-image"><img src="./img/icons/house.svg" alt="briefcase"
+										class="header__nav-img"></div>Все фермы
+							</a>
+						</div>
+						<div class="header__nav-links">
+							<a href="" class="header__nav-link header__nav-link_active">
+								<div class="header__nav-image"><img src="./img/icons/database.svg" alt="house"
+										class="header__nav-img"></div>База данных
+							</a>
+							<div class="header__nav-down nav-down">
+								<a href="" class="nav-down__link nav-down__link_active">Пользователи</a>
+								<a href="" class="nav-down__link">Клиенты</a>
+								<a href="" class="nav-down__link">Фермы</a>
+								<a href="" class="nav-down__link">Монеты</a>
+								<a href="" class="nav-down__link">Датчики</a>
+							</div>
+						</div>
+						<div class="header__nav-links">
+							<a href="" class="header__nav-link">
+								<div class="header__nav-image"><img src="./img/icons/calculator.svg" alt="info"
+										class="header__nav-img"></div>Калькулятор
+							</a>
+						</div>
+						<div class="header__nav-admin nav-admin">
+							<div class="nav-admin__selector select-drop">
+								<div class="select-drop__arrow">
+									<img class="select-drop__arrow-img" src="./img/icons/simple-green-arrow.svg" alt="">
+								</div>
+								<div class="select-drop__input-wrap">
+									<input class="select-drop__input" placeholder="Все клиенты" name="name" value="" type="text" readonly="">
+								</div>
+								<div class="select-drop__list">
+									<div class="select-drop__list-item">Константинов Константин</div>
+									<div class="select-drop__list-item">Снетков Дмитрий</div>
+									<div class="select-drop__list-item">Гоги Вася Ваааааа</div>
+								</div>
+							</div>
+							<a class="nav-admin__link" href="">Портфель</a>
+							<a class="nav-admin__link" href="">Фермы</a>
+						</div>
+					</div>
+				</nav>
+
+				<div class="header__interaction">
+					<div class="header__interaction-left interaction-left">
+						<div class="interaction-left__wrap">
+							<div class="interaction-left__image">
+								<img class="interaction-left__img" src="./img/example/client.jpg" alt="client">
+							</div>
+							<div class="interaction-left__name">
+								<p>Константин</p>
+								<p>Вениаминов</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="header__interaction-right interaction-right">
+						<div class="interaction-right__theme">
+							<div class="interaction-right__theme-image interaction-right__theme-image_active">
+								<img class="interaction-right__theme-img" src="./img/icons/light-theme.svg"
+									alt="light-theme">
+							</div>
+							<div class="interaction-right__theme-image">
+								<img class="interaction-right__theme-img" src="./img/icons/dark-theme.svg"
+									alt="dark-theme">
+							</div>
+						</div>
+						<div class="interaction-right__languages">
+							<div class="interaction-right__languages-item languages-item">
+								<div class="languages-item__flag">
+									<img class="languages-item__img" src="./img/icons/ru.svg" alt="ru">
+								</div>
+								<div class="languages-item__text">RU</div>
+							</div>
+						</div>
+						<div class="interaction-right__exit">
+							<div class="interaction-right__exit-image">
+								<img class="interaction-right__exit-img" src="./img/icons/exit.svg" alt="exit">
+							</div>
+							<div class="interaction-right__exit-text">Выйти</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main class="main-content admin-users">
+
+		<div class="admin-users__content">
+			<div class="admin-users__type">
+				<div class="admin-users__type-item admin-users__type-item_id">ID</div>
+				<div class="admin-users__type-item admin-users__type-item_login">ЛОГИН</div>
+				<div class="admin-users__type-item admin-users__type-item_mail">ПОЧТА</div>
+				<div class="admin-users__type-item admin-users__type-item_admin">АДМИНИСТРАТОР</div>
+				<div class="admin-users__type-item admin-users__type-item_online">АКТИВЕН</div>
+				<div class="admin-users__type-item admin-users__type-item_client">КЛИЕНТ</div>
+			</div>
+
+			<div class="admin-users__list">
+				<div class="admin-users__list-item">
+					<div class="admin-users__list-id"><span class="admin-users__list-green">#</span>1</div>
+					<div class="admin-users__list-login">
+						<div class="admin-users__list-mobile">ЛОГИН</div> Башлачев
+					</div>
+					<div class="admin-users__list-mail">
+						<div class="admin-users__list-mobile">ПОЧТА</div>-
+					</div>
+					<div class="admin-users__list-admin admin-users__list-yes">
+						<div class="admin-users__list-mobile">АДМИНИСТРАТОР</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-online admin-users__list-yes">
+						<div class="admin-users__list-mobile">АКТИВЕН</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-client">
+						<div class="admin-users__list-mobile">КЛИЕНТ</div>
+						<div class="admin-users__list-span">-</div>
+					</div>
+				</div>
+
+				<div class="admin-users__list-item">
+					<div class="admin-users__list-id"><span class="admin-users__list-green">#</span>1</div>
+					<div class="admin-users__list-login">
+						<div class="admin-users__list-mobile">ЛОГИН</div> sadccasassadas
+					</div>
+					<div class="admin-users__list-mail">
+						<div class="admin-users__list-mobile">ПОЧТА</div>-
+					</div>
+					<div class="admin-users__list-admin admin-users__list-yes">
+						<div class="admin-users__list-mobile">АДМИНИСТРАТОР</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-online admin-users__list-yes">
+						<div class="admin-users__list-mobile">АКТИВЕН</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-client">
+						<div class="admin-users__list-mobile">КЛИЕНТ</div>
+						<div class="admin-users__list-span">-</div>
+					</div>
+				</div>
+
+				<div class="admin-users__list-item">
+					<div class="admin-users__list-id"><span class="admin-users__list-green">#</span>1</div>
+					<div class="admin-users__list-login">
+						<div class="admin-users__list-mobile">ЛОГИН</div> смута
+					</div>
+					<div class="admin-users__list-mail">
+						<div class="admin-users__list-mobile">ПОЧТА</div>-
+					</div>
+					<div class="admin-users__list-admin admin-users__list-yes">
+						<div class="admin-users__list-mobile">АДМИНИСТРАТОР</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-online admin-users__list-yes">
+						<div class="admin-users__list-mobile">АКТИВЕН</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-client">
+						<div class="admin-users__list-mobile">КЛИЕНТ</div>
+						<div class="admin-users__list-span">-</div>
+					</div>
+				</div>
+
+				<div class="admin-users__list-item">
+					<div class="admin-users__list-id"><span class="admin-users__list-green">#</span>1</div>
+					<div class="admin-users__list-login">
+						<div class="admin-users__list-mobile">ЛОГИН</div> Леметрис
+					</div>
+					<div class="admin-users__list-mail">
+						<div class="admin-users__list-mobile">ПОЧТА</div>mkons23@gmail.com
+					</div>
+					<div class="admin-users__list-admin admin-users__list-yes">
+						<div class="admin-users__list-mobile">АДМИНИСТРАТОР</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-online admin-users__list-yes">
+						<div class="admin-users__list-mobile">АКТИВЕН</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-client">
+						<div class="admin-users__list-mobile">КЛИЕНТ</div>
+						<div class="admin-users__list-span">-</div>
+					</div>
+				</div>
+
+				<div class="admin-users__list-item">
+					<div class="admin-users__list-id"><span class="admin-users__list-green">#</span>1</div>
+					<div class="admin-users__list-login">
+						<div class="admin-users__list-mobile">ЛОГИН</div> Снетков
+					</div>
+					<div class="admin-users__list-mail">
+						<div class="admin-users__list-mobile">ПОЧТА</div>snetkov@mail.ru
+					</div>
+					<div class="admin-users__list-admin admin-users__list-no">
+						<div class="admin-users__list-mobile">АДМИНИСТРАТОР</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-online admin-users__list-yes">
+						<div class="admin-users__list-mobile">АКТИВЕН</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-client">
+						<div class="admin-users__list-mobile">КЛИЕНТ</div>
+						<div class="admin-users__list-span">Снетков Дмитрий</div>
+					</div>
+				</div>
+
+				<div class="admin-users__list-item">
+					<div class="admin-users__list-id"><span class="admin-users__list-green">#</span>1</div>
+					<div class="admin-users__list-login">
+						<div class="admin-users__list-mobile">ЛОГИН</div> дфдфдф
+					</div>
+					<div class="admin-users__list-mail">
+						<div class="admin-users__list-mobile">ПОЧТА</div>dfdda@mail.ru
+					</div>
+					<div class="admin-users__list-admin admin-users__list-no">
+						<div class="admin-users__list-mobile">АДМИНИСТРАТОР</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-online admin-users__list-yes">
+						<div class="admin-users__list-mobile">АКТИВЕН</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-client">
+						<div class="admin-users__list-mobile">КЛИЕНТ</div>
+						<div class="admin-users__list-span">Федоров Александр Кондратьевич</div>
+					</div>
+				</div>
+
+				<div class="admin-users__list-item">
+					<div class="admin-users__list-id"><span class="admin-users__list-green">#</span>1</div>
+					<div class="admin-users__list-login">
+						<div class="admin-users__list-mobile">ЛОГИН</div> дфдфдф
+					</div>
+					<div class="admin-users__list-mail">
+						<div class="admin-users__list-mobile">ПОЧТА</div>dfdda@mail.ru
+					</div>
+					<div class="admin-users__list-admin admin-users__list-no">
+						<div class="admin-users__list-mobile">АДМИНИСТРАТОР</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-online admin-users__list-yes">
+						<div class="admin-users__list-mobile">АКТИВЕН</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-client">
+						<div class="admin-users__list-mobile">КЛИЕНТ</div>
+						<div class="admin-users__list-span">Федоров Александр Кондратьевич</div>
+					</div>
+				</div>
+
+				<div class="admin-users__list-item">
+					<div class="admin-users__list-id"><span class="admin-users__list-green">#</span>1</div>
+					<div class="admin-users__list-login">
+						<div class="admin-users__list-mobile">ЛОГИН</div> дфдфдф
+					</div>
+					<div class="admin-users__list-mail">
+						<div class="admin-users__list-mobile">ПОЧТА</div>dfdda@mail.ru
+					</div>
+					<div class="admin-users__list-admin admin-users__list-no">
+						<div class="admin-users__list-mobile">АДМИНИСТРАТОР</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-online admin-users__list-yes">
+						<div class="admin-users__list-mobile">АКТИВЕН</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-client">
+						<div class="admin-users__list-mobile">КЛИЕНТ</div>
+						<div class="admin-users__list-span">Федоров Александр Кондратьевич</div>
+					</div>
+				</div>
+
+				<div class="admin-users__list-item">
+					<div class="admin-users__list-id"><span class="admin-users__list-green">#</span>1</div>
+					<div class="admin-users__list-login">
+						<div class="admin-users__list-mobile">ЛОГИН</div> дфдфдф
+					</div>
+					<div class="admin-users__list-mail">
+						<div class="admin-users__list-mobile">ПОЧТА</div>dfdda@mail.ru
+					</div>
+					<div class="admin-users__list-admin admin-users__list-no">
+						<div class="admin-users__list-mobile">АДМИНИСТРАТОР</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-online admin-users__list-yes">
+						<div class="admin-users__list-mobile">АКТИВЕН</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-client">
+						<div class="admin-users__list-mobile">КЛИЕНТ</div>
+						<div class="admin-users__list-span">Федоров Александр Кондратьевич</div>
+					</div>
+				</div>
+
+				<div class="admin-users__list-item">
+					<div class="admin-users__list-id"><span class="admin-users__list-green">#</span>1</div>
+					<div class="admin-users__list-login">
+						<div class="admin-users__list-mobile">ЛОГИН</div> дфдфдф
+					</div>
+					<div class="admin-users__list-mail">
+						<div class="admin-users__list-mobile">ПОЧТА</div>dfdda@mail.ru
+					</div>
+					<div class="admin-users__list-admin admin-users__list-no">
+						<div class="admin-users__list-mobile">АДМИНИСТРАТОР</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-online admin-users__list-yes">
+						<div class="admin-users__list-mobile">АКТИВЕН</div>
+						<div class="admin-users__list-tick"><img src="./img/icons/tick-status.svg" alt="tick"></div>
+						<div class="admin-users__list-cross"><img src="./img/icons/cross-status.svg" alt="cross"></div>
+					</div>
+					<div class="admin-users__list-client">
+						<div class="admin-users__list-mobile">КЛИЕНТ</div>
+						<div class="admin-users__list-span">Федоров Александр Кондратьевич</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="admin-users__add" onclick="openModal('modal-right', 'modal-right_active')">
+			<div class="admin-users__add-image">
+				<img class="admin-users__add-img" src="./img/icons/circl-plus.svg" alt="circl-plus">
+			</div>
+			<div class="admin-users__add-text" >Добавить нового пользователя</div>
+		</div>
+
+		<div class="admin-users__modal modal-right">
+			<div class="modal-right__authorization modal-right__modal-item">
+				<button class="modal-right__modal-close" onclick="closeModal('modal-right', 'modal-right_active')">
+					<div class="modal-right__modal-line"></div>
+					<div class="modal-right__modal-line"></div>
+				</button>
+				<div class="modal-right__modal-container">
+					<h2 class="modal-right__modal-title">Новый пользователь</h2>
+					<p class="modal-right__modal-paragraph">Введите данные для регистрации 
+						нового пользователя</p>
+					<form class="modal-right__modal-form" action="#" method="post">
+						<div class="modal-right__modal-content">
+							<div class="modal-right__modal-name input-wrap">
+								<input class="modal-right__modal-input form-input" placeholder="Логин" type="text"
+									id="username" name="username" required="">
+								<label class="modal-right__modal-label form-label" for="username">Логин</label>
+							</div>
+							<div class="modal-right__modal-mail input-wrap">
+								<input class="modal-right__modal-input form-input" placeholder="E-mail" type="text"
+									id="username" name="username" required="">
+								<label class="main-page__modal-label form-label" for="username">E-mail</label>
+							</div>
+							<div class="modal-right__modal-password input-wrap">
+								<input class="modal-right__modal-input form-input" placeholder="Пароль" type="password"
+									id="password" name="password" required="">
+								<label class="modal-right__modal-label form-label" for="password">Пароль</label>
+							</div>
+							<div class="modal-right__modal-selects modal-selects">
+								<div class="modal-selects__drop select-drop">
+									<div class="select-drop__arrow">
+										<img class="select-drop__arrow-img" src="./img/icons/simple-green-arrow.svg" alt="">
+									</div>
+									<div class="select-drop__input-wrap">
+										<input class="select-drop__input" placeholder="Клиенты" name="name" value="" type="text" readonly="">
+									</div>
+									<div class="select-drop__list">
+										<div class="select-drop__list-item">Константинов Константин</div>
+										<div class="select-drop__list-item">Снетков Дмитрий</div>
+										<div class="select-drop__list-item">Гоги Вася Ваааааа</div>
+									</div>
+								</div>
+							</div>
+							<div class="modal-right__modal-buttons">
+								<label class="modal-right__modal-checkbox">
+									<input class="modal-right__modal-check" type="checkbox" name="admin">Администратор
+								</label>
+								<label class="modal-right__modal-checkbox">
+									<input class="modal-right__modal-check" type="checkbox" name="online">Активен
+								</label>
+							</div>
+						</div>
+						<button class="modal-right__modal-submit" type="submit">Добавить</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</main>
+
+	<script type="text/javascript" src="./media.js"></script>
+</body>
+
+</html>
